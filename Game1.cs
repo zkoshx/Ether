@@ -15,6 +15,8 @@ namespace Ether
         public static Rectangle TWall;
         public static Rectangle BWall;
 
+        public bool check;
+
         public Vector2 test;
         public bool inter;
 
@@ -24,9 +26,10 @@ namespace Ether
         Texture2D bulletBoard;
         public static Texture2D bone;
 
-        Instances.Enemy.EnemyLogic enemyblock1 = new Instances.Enemy.EnemyLogic(bone, new Vector2(512, 250));
-        Instances.Enemy.EnemyLogic enemyblock2 = new Instances.Enemy.EnemyLogic(bone, new Vector2(512, 300));
-        Instances.Enemy.EnemyLogic enemyblock3 = new Instances.Enemy.EnemyLogic(bone, new Vector2(512, 350));
+        Instances.Enemy.EnemyLogic enemyblock1 = new Instances.Enemy.EnemyLogic(bone, new Vector2(612, 250));
+        Instances.Enemy.EnemyLogic enemyblock2 = new Instances.Enemy.EnemyLogic(bone, new Vector2(612, 300));
+        Instances.Enemy.EnemyLogic enemyblock3 = new Instances.Enemy.EnemyLogic(bone, new Vector2(612, 350));
+        Instances.Enemy.EnemyLogic downblock1 = new Instances.Enemy.EnemyLogic(bone, new Vector2(215, 100));
 
         
 
@@ -141,7 +144,12 @@ namespace Ether
             
             _spriteBatch.Draw(bone, enemyblock1._position, Color.White);
             _spriteBatch.Draw(bone, enemyblock2._position, Color.White);
-            _spriteBatch.Draw(bone ,enemyblock3._position, Color.White);
+            _spriteBatch.Draw(bone, enemyblock3._position, Color.White);
+
+            if (check)
+            {
+                _spriteBatch.Draw(bone, downblock1._position, Color.White);
+            }
 
             _spriteBatch.End();
 

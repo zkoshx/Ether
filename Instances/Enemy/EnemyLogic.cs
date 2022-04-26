@@ -26,7 +26,7 @@ namespace Ether.Instances.Enemy
         {
             _texture = texture;
             _position = position;
-            bonebox = new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y), texture.Width, texture.Height);
+            
         }
 
         public virtual void Update(GameTime gameTime, List<EnemyLogic> enemy)
@@ -48,7 +48,7 @@ namespace Ether.Instances.Enemy
 
         public void move(GameTime gameTime)
         {
-            velocity = new Vector2(-100, 0);
+            velocity = new Vector2(-175, 0);
             _position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
             
         }
