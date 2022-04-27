@@ -15,7 +15,7 @@ namespace Ether
         public static Rectangle TWall;
         public static Rectangle BWall;
 
-        public bool check;
+        public bool check = false;
 
         public Vector2 test;
         public bool inter;
@@ -96,6 +96,16 @@ namespace Ether
                 {
 
                 }
+            }
+
+            if (check)
+            {
+                downblock1.move2();
+            }
+
+            if (enemyblock1._position < 0)
+            {
+                check = true;
             }
 
             enemyblock1.move(gameTime);

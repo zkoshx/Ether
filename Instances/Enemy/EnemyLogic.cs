@@ -50,7 +50,12 @@ namespace Ether.Instances.Enemy
         {
             velocity = new Vector2(-175, 0);
             _position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+        }
+
+        public void move2(GameTime game)
+        {
+            velocity = new Vector2(0, 175);
+            _position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
